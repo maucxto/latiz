@@ -32,4 +32,23 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Formulario enviado (simulación)');
         });
     }
+
+    // Scroll animations
+    const animateElements = document.querySelectorAll('.animate-fade-in');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    animateElements.forEach(el => observer.observe(el));
+
+    // Footer logo scroll to top
+    const footerLogo = document.getElementById('footer-logo');
+    if (footerLogo) {
+        footerLogo.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 });

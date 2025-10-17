@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const logoContainer = document.getElementById('logo-container');
     if (logoContainer) {
         // Insertar el texto del logo (asumiendo que el logo es texto "Latiz" por ahora; se puede reemplazar con SVG o imagen)
-        logoContainer.innerHTML = 'Latiz';
+        logoContainer.innerHTML = 'LATIZE';
         
         // Agregar clase para activar animaciones si es necesario (en este caso, la animación es aplicada directamente via CSS)
         // logoContainer.classList.add('animate-lattice'); // Si se quiere trigger manual
