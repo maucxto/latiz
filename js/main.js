@@ -25,6 +25,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Toggle desktop menu dropdown
+    const menuButton = document.getElementById('menu-button');
+    if (menuButton && navigation) {
+        menuButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            navigation.classList.toggle('hidden');
+        });
+    }
+
     // Smooth scroll para enlaces de navegación
     const links = document.querySelectorAll('a[href^="#"]');
     links.forEach(link => {
@@ -39,9 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Close menu if open
                 const navigationInner = document.querySelector('.navigation');
                 const menuToggleInner = document.getElementById('menu-toggle');
-                if (navigationInner && menuToggleInner && !navigationInner.classList.contains('hidden')) {
+                if (navigationInner && !navigationInner.classList.contains('hidden')) {
                     navigationInner.classList.add('hidden');
-                    menuToggleInner.classList.remove('active');
+                    if (menuToggleInner) {
+                        menuToggleInner.classList.remove('active');
+                    }
                     header.classList.remove('menu-active');
                 }
             }
