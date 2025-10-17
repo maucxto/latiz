@@ -11,13 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { once: true });
     }, 3500); // After animation
 
+    // Header element
+    const header = document.querySelector('.header');
+
     // Toggle navigation menu
     const menuToggle = document.getElementById('menu-toggle');
     const navigation = document.querySelector('.navigation');
-    if (menuToggle && navigation) {
+    if (menuToggle && navigation && header) {
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             navigation.classList.toggle('hidden');
+            header.classList.toggle('menu-active');
         });
     }
 
@@ -29,16 +33,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetId = link.getAttribute('href').substring(1);
             const target = document.getElementById(targetId);
             if (target) {
-                const header = document.querySelector('.header');
                 const headerHeight = header.offsetHeight;
                 const top = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
                 window.scrollTo({ top, behavior: 'smooth' });
                 // Close menu if open
-                const navigation = document.querySelector('.navigation');
-                const menuToggle = document.getElementById('menu-toggle');
-                if (navigation && menuToggle && !navigation.classList.contains('hidden')) {
-                    navigation.classList.add('hidden');
-                    menuToggle.classList.remove('active');
+                const navigationInner = document.querySelector('.navigation');
+                const menuToggleInner = document.getElementById('menu-toggle');
+                if (navigationInner && menuToggleInner && !navigationInner.classList.contains('hidden')) {
+                    navigationInner.classList.add('hidden');
+                    menuToggleInner.classList.remove('active');
+                    header.classList.remove('menu-active');
                 }
             }
         });
