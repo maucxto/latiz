@@ -14,16 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Header element
     const header = document.querySelector('.header');
 
-    // Toggle navigation menu
-    const menuToggle = document.getElementById('menu-toggle');
-    const navigation = document.querySelector('.navigation');
-    if (menuToggle && navigation && header) {
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navigation.classList.toggle('hidden');
-            header.classList.toggle('menu-active');
-        });
-    }
+    // Removed toggle navigation for menu-toggle as it's now replaced by menu-button for all devices
 
     // Toggle desktop menu dropdown
     const menuButton = document.getElementById('menu-button');
