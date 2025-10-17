@@ -1,5 +1,16 @@
 // Scripts principales
 document.addEventListener('DOMContentLoaded', () => {
+    // Splash screen
+    const splash = document.getElementById('splash-screen');
+    const mainContent = document.getElementById('main-content');
+    setTimeout(() => {
+        splash.style.opacity = '0';
+        splash.addEventListener('transitionend', () => {
+            splash.style.display = 'none';
+            mainContent.style.display = 'block';
+        }, { once: true });
+    }, 3500); // After animation
+
     // Toggle navigation menu
     const menuToggle = document.getElementById('menu-toggle');
     const navigation = document.querySelector('.navigation');
