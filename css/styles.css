@@ -80,8 +80,8 @@ body {
 
 /* Colores corporativos */
 :root {
-    --primary: #1a3b5d;
-    --accent: #d4af37;
+    --primary: #000000;
+    --accent: #ff6600;
     --text-color: #333;
     --bg-light: #f9f9f9;
     --bg-dark: #fff;
@@ -286,7 +286,7 @@ body {
 }
 
 .stars {
-    color: #ffc107;
+    color: var(--accent);
     font-size: 1.5rem;
     margin-bottom: 15px;
 }
