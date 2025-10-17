@@ -106,7 +106,7 @@ body {
 
 .header .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     position: relative;
 }
@@ -559,6 +559,9 @@ body {
         max-height: none;
         opacity: 1;
         overflow: visible;
+        width: auto;
+        background-color: transparent;
+        text-align: right;
     }
 
     .menu-toggle {
@@ -567,7 +570,7 @@ body {
 
     .navigation ul {
         flex-direction: row;
-        justify-content: center;
+        justify-content: flex-start;
         gap: 20px;
     }
 
