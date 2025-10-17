@@ -65,6 +65,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1 });
     animateElements.forEach(el => observer.observe(el));
 
+    // Active navigation on scroll
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
+
+    const setActiveLink = () => {
+        let index = sections.length;
+
+        while (--index && window.scrollY + 100 < sections[index].offsetTop) {}
+
+        navLinks.forEach((link) => link.classList.remove('active'));
+        navLinks[index].classList.add('active');
+    };
+
+    setActiveLink(); // Initial call
+    window.addEventListener('scroll', setActiveLink);
+
     // Footer logo scroll to top
     const footerLogo = document.getElementById('footer-logo');
     if (footerLogo) {
