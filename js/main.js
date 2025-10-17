@@ -51,4 +51,20 @@ document.addEventListener('DOMContentLoaded', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
+
+    // Carousel functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    if (slides.length > 0) {
+        slides[0].classList.add('active');
+    }
+
+    window.changeSlide = (direction) => {
+        if (slides.length === 0) return;
+        slides[currentSlide].classList.remove('active');
+        slides[currentSlide].classList.add('prev-slide');
+        currentSlide = (currentSlide + direction + slides.length) % slides.length;
+        slides.forEach(slide => slide.classList.remove('prev-slide', 'next-slide'));
+        slides[currentSlide].classList.add('active');
+    };
 });
