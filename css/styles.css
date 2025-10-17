@@ -534,7 +534,7 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .menu-toggle {
+    .menu-button {
         display: none;
     }
 
