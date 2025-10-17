@@ -40,8 +40,9 @@ body {
 
 .header .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .logo-container {
@@ -58,6 +59,10 @@ body {
     cursor: pointer;
     padding: 0;
     outline: none;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .menu-toggle .bar {
