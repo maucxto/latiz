@@ -45,18 +45,67 @@ body {
 }
 
 .logo-container {
-    width: 150px;
+    width: 240px;
     height: 50px;
     background-color: transparent; /* Espacio vacío para animación */
 }
 
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 30px;
+    background-color: #fff;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -5px);
+}
+
+.navigation {
+    background-color: var(--primary);
+    width: 100%;
+    text-align: center;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.navigation:not(.hidden) {
+    max-height: 200px;
+    opacity: 1;
+}
+
 .navigation ul {
     display: flex;
+    flex-direction: column;
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .navigation li {
-    margin-left: 20px;
+    margin: 10px 0;
 }
 
 .navigation a {

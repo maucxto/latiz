@@ -1,5 +1,15 @@
 // Scripts principales
 document.addEventListener('DOMContentLoaded', () => {
+    // Toggle navigation menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const navigation = document.querySelector('.navigation');
+    if (menuToggle && navigation) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navigation.classList.toggle('hidden');
+        });
+    }
+
     // Smooth scroll para enlaces de navegación
     const links = document.querySelectorAll('a[href^="#"]');
     links.forEach(link => {
