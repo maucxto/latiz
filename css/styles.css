@@ -540,22 +540,14 @@ body {
 
     .header .container {
         flex-direction: column;
-        transition: all 0.3s ease;
     }
 
     .header.menu-active .container {
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
-    .header.menu-active .logo-container {
-        order: 1;
-    }
-
-    .header.menu-active .navigation {
-        order: 2;
+    .navigation:not(.hidden) {
+        margin-top: 20px;
     }
 
     .header.menu-active .menu-toggle {
