@@ -186,7 +186,8 @@ body {
     transition: color 0.3s;
 }
 
-.navigation a:hover {
+.navigation a:hover,
+.navigation a.active {
     color: var(--accent);
 }
 
@@ -225,7 +226,7 @@ body {
 /* Clients */
 .clients {
     padding: 80px 0;
-    background-color: #fff;
+    background-color: var(--bg-light);
 }
 
 .clients h2 {
@@ -361,7 +362,7 @@ body {
 /* About */
 .about {
     padding: 80px 0;
-    background-color: #fff;
+    background-color: var(--bg-light);
     text-align: center;
 }
 
@@ -550,5 +551,27 @@ body {
 
     .contact-card {
         padding: 20px;
+    }
+}
+
+@media (min-width: 769px) {
+    .navigation {
+        max-height: none;
+        opacity: 1;
+        overflow: visible;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .navigation ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .navigation li {
+        margin: 0;
     }
 }
