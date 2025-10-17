@@ -1,0 +1,77 @@
+/* Animaciones para el logo */
+/* Animación temática inspirada en "lattice": un efecto de expansión como una red o lattice */
+
+#logo-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    animation: latticeFadeIn 2s ease-in-out forwards;
+}
+
+@keyframes latticeFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Efecto de lattice simple con pseudo-elementos (líneas cruzadas simulando una red) */
+#logo-container::before,
+#logo-container::after {
+    content: '';
+    position: absolute;
+    background-color: var(--accent);
+    opacity: 0.3;
+    transition: all 1s ease;
+}
+
+#logo-container::before {
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    left: 0;
+    transform: scaleX(0);
+    animation: latticeLineX 1.5s ease-in-out 0.5s forwards;
+}
+
+#logo-container::after {
+    height: 100%;
+    width: 2px;
+    left: 50%;
+    top: 0;
+    transform: scaleY(0);
+    animation: latticeLineY 1.5s ease-in-out 0.5s forwards;
+}
+
+@keyframes latticeLineX {
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes latticeLineY {
+    to {
+        transform: scaleY(1);
+    }
+}
+
+/* Animaciones adicionales para elementos como servicios */
+.service-item {
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: scale(1.05);
+}
