@@ -42,8 +42,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetId = link.getAttribute('href').substring(1);
             const target = document.getElementById(targetId);
             if (target) {
-                const headerHeight = header.offsetHeight;
-                const top = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                let top;
+                if (targetId === 'hero') {
+                    // Para "Inicio", ir directamente al top
+                    top = 0;
+                } else {
+                    // Para otros, aplicar offset del header
+                    const headerHeight = header.offsetHeight;
+                    top = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                }
                 window.scrollTo({ top, behavior: 'smooth' });
                 // Close menu if open
                 const navigationInner = document.querySelector('.navigation');
