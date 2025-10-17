@@ -452,4 +452,19 @@ body {
     .services-grid {
         grid-template-columns: 1fr;
     }
+
+    .clients h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .carousel {
+        width: 100%;
+        height: 250px;
+    }
+
+    .carousel-button {
+        padding: 8px 12px;
+        font-size: 1rem;
+    }
 }
