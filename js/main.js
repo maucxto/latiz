@@ -29,7 +29,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetId = link.getAttribute('href').substring(1);
             const target = document.getElementById(targetId);
             if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
+                const header = document.querySelector('.header');
+                const headerHeight = header.offsetHeight;
+                const top = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                window.scrollTo({ top, behavior: 'smooth' });
+                // Close menu if open
+                const navigation = document.querySelector('.navigation');
+                const menuToggle = document.getElementById('menu-toggle');
+                if (navigation && menuToggle && !navigation.classList.contains('hidden')) {
+                    navigation.classList.add('hidden');
+                    menuToggle.classList.remove('active');
+                }
             }
         });
     });
